@@ -1,5 +1,58 @@
-*{
-    box-sizing: border-box;
+/* =========================================
+   REGLAS GENERALES (El cuerpo de la página)
+   ========================================= */
+body {
+    background-color: #f4ecd8; /* Tono beige cálido de la marca */
+    color: #4a3623; /* Tono café oscuro para los textos */
+    font-family: Arial, sans-serif;
+    margin: 0; /* ¡NUEVO! Quitamos un margen blanco feo que el navegador pone por defecto */
+    padding: 0;
+}
+
+/* =========================================
+   LA REBANADA DE ARRIBA: ENCABEZADO (Header)
+   ========================================= */
+header {
+    background-color: #3b2a1a; /* Café muy oscuro y elegante */
+    padding: 15px 30px;
+    display: flex; /* El acomodador mágico horizontal */
+    justify-content: space-between; /* Separa el título del menú a los extremos */
+    align-items: center; /* Centra todo perfectamente hacia arriba y abajo */
+}
+
+header h1 {
+    color: #f4ecd8; /* Letras beige para que resalten en el fondo oscuro */
+    margin: 0;
+    font-size: 24px;
+}
+
+nav ul {
+    list-style: none; /* Adiós a los puntitos de la lista */
+    display: flex; /* Acomoda los botones uno al lado del otro */
+    gap: 25px; /* Separación de 25 píxeles entre cada botón */
     margin: 0;
     padding: 0;
+}
+
+nav a {
+    color: #f4ecd8;
+    text-decoration: none; /* Adiós a la rayita azul de abajo */
+    font-weight: bold; /* Hace la letra un poquito más gruesa */
+    font-size: 16px;
+    transition: 0.3s; /* Suaviza el cambio de color al pasar el mouse (dura 0.3 segundos) */
+}
+
+nav a:hover {
+    color: #c49a45; /* Dorado elegante solo cuando pasas el ratón por encima */
+}
+
+/* =========================================
+   LA REBANADA DE ABAJO: PIE DE PÁGINA (Footer)
+   ========================================= */
+footer {
+    background-color: #3b2a1a; /* Usamos el mismo café oscuro del encabezado */
+    color: #f4ecd8; /* Letras beige */
+    text-align: center; /* Centramos el texto para que se vea ordenado */
+    padding: 20px; /* Le damos espacio por dentro para que no se vea aplastado */
+    margin-top: 50px; /* Lo empujamos hacia abajo para que no se pegue con lo de arriba */
 }
