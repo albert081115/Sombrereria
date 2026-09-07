@@ -1,5 +1,6 @@
+
 /* =========================================
-   REGLAS GENERALES (El cuerpo de la página)
+    REGLAS GENERALES (El cuerpo de la página)
    ========================================= */
 body {
     background-color: #f4ecd8; /* Tono beige cálido de la marca */
@@ -8,9 +9,8 @@ body {
     margin: 0; /* ¡NUEVO! Quitamos un margen blanco feo que el navegador pone por defecto */
     padding: 0;
 }
-
 /* =========================================
-   LA REBANADA DE ARRIBA: ENCABEZADO (Header)
+    LA REBANADA DE ARRIBA: ENCABEZADO (Header)
    ========================================= */
 header {
     background-color: #3b2a1a; /* Café muy oscuro y elegante */
@@ -24,6 +24,19 @@ header h1 {
     color: #f4ecd8; /* Letras beige para que resalten en el fondo oscuro */
     margin: 0;
     font-size: 24px;
+}
+
+/* agrupo mi foto y mi titulo para que se formen uno al lado del otro */
+.marca {
+    display: flex;
+    align-items: center; 
+    gap: 15px; /* separacion entre la foto y las letras */
+}
+
+/* le pongo un limite al tamaño del logo */
+.logo {
+    width: 80px; /* ancho de la imagen para que no quede ni gigante ni de hormiga */
+    height: auto; /* evita que la foto se estire o se aplaste */
 }
 
 nav ul {
@@ -47,7 +60,7 @@ nav a:hover {
 }
 
 /* =========================================
-   LA REBANADA DE ABAJO: PIE DE PÁGINA (Footer)
+    LA REBANADA DE ABAJO: PIE DE PÁGINA (Footer)
    ========================================= */
 footer {
     background-color: #3b2a1a; /* Usamos el mismo café oscuro del encabezado */
@@ -55,4 +68,39 @@ footer {
     text-align: center; /* Centramos el texto para que se vea ordenado */
     padding: 20px; /* Le damos espacio por dentro para que no se vea aplastado */
     margin-top: 50px; /* Lo empujamos hacia abajo para que no se pegue con lo de arriba */
+}
+
+/* =========================================
+   EL CONTENIDO PRINCIPAL (Banner)
+   ========================================= */
+
+/* le doy espacio y centro todo el texto del banner */
+.banner-principal {
+    text-align: center;
+    padding: 80px 20px; /* mucho espacio arriba y abajo para que respire */
+}
+
+/* hago el titulo mas grande y llamativo */
+.banner-principal h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+/* le doy estilo de boton real al enlace */
+.boton-catalogo {
+    display: inline-block;
+    background-color: #4a3623; /* fondo cafe oscuro */
+    color: #f4ecd8; /* letras beige */
+    padding: 12px 25px; /* engordo el boton por dentro */
+    margin-top: 20px;
+    text-decoration: none; /* le quito la raya azul */
+    font-weight: bold;
+    border-radius: 5px; /* le redondeo las esquinitas */
+    transition: 0.3s;
+}
+
+/* el efecto cuando paso el mouse sobre el boton */
+.boton-catalogo:hover {
+    background-color: #c49a45; /* fondo dorado elegante */
+    color: #4a3623; /* letras cafes */
 }
