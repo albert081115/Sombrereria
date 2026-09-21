@@ -1,106 +1,201 @@
-
 /* =========================================
-    REGLAS GENERALES (El cuerpo de la página)
+   REGLAS GENERALES
    ========================================= */
 body {
-    background-color: #f4ecd8; /* Tono beige cálido de la marca */
-    color: #4a3623; /* Tono café oscuro para los textos */
+    background-color: #f4ecd8; /* Elegí este color beige para dar un tono rústico/artesanal */
+    color: #4a3623; /* Un café oscuro para que el texto contraste bien y se lea fácil */
     font-family: Arial, sans-serif;
-    margin: 0; /* ¡NUEVO! Quitamos un margen blanco feo que el navegador pone por defecto */
+    margin: 0;
     padding: 0;
 }
+
 /* =========================================
-    LA REBANADA DE ARRIBA: ENCABEZADO (Header)
+   ENCABEZADO Y NAVEGACIÓN
    ========================================= */
 header {
-    background-color: #3b2a1a; /* Café muy oscuro y elegante */
+    background-color: #3b2a1a; 
     padding: 15px 30px;
-    display: flex; /* El acomodador mágico horizontal */
-    justify-content: space-between; /* Separa el título del menú a los extremos */
-    align-items: center; /* Centra todo perfectamente hacia arriba y abajo */
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; /* Centro mi logo y mi menú verticalmente */
+}
+
+.marca {
+    display: flex;
+    align-items: center; 
+    gap: 15px; /* Dejo un pequeño espacio entre mi logo y el nombre de la sombrerería */
+}
+
+.logo {
+    width: 80px; 
+    height: auto; 
 }
 
 header h1 {
-    color: #f4ecd8; /* Letras beige para que resalten en el fondo oscuro */
+    color: #f4ecd8; 
     margin: 0;
     font-size: 24px;
 }
 
-/* agrupo mi foto y mi titulo para que se formen uno al lado del otro */
-.marca {
-    display: flex;
-    align-items: center; 
-    gap: 15px; /* separacion entre la foto y las letras */
-}
-
-/* le pongo un limite al tamaño del logo */
-.logo {
-    width: 80px; /* ancho de la imagen para que no quede ni gigante ni de hormiga */
-    height: auto; /* evita que la foto se estire o se aplaste */
-}
-
 nav ul {
-    list-style: none; /* Adiós a los puntitos de la lista */
-    display: flex; /* Acomoda los botones uno al lado del otro */
-    gap: 25px; /* Separación de 25 píxeles entre cada botón */
+    list-style: none; 
+    display: flex; 
+    gap: 25px; /* Separación entre los enlaces de mi menú */
     margin: 0;
     padding: 0;
 }
 
 nav a {
     color: #f4ecd8;
-    text-decoration: none; /* Adiós a la rayita azul de abajo */
-    font-weight: bold; /* Hace la letra un poquito más gruesa */
+    text-decoration: none; 
+    font-weight: bold; 
     font-size: 16px;
-    transition: 0.3s; /* Suaviza el cambio de color al pasar el mouse (dura 0.3 segundos) */
+    transition: 0.3s; /* Le pongo esta transición para que el hover se vea suave */
 }
 
 nav a:hover {
-    color: #c49a45; /* Dorado elegante solo cuando pasas el ratón por encima */
+    color: #c49a45; /* tono dorado para cuando paso el mouse por el menú */
 }
 
 /* =========================================
-    LA REBANADA DE ABAJO: PIE DE PÁGINA (Footer)
+   SECCIÓN HERO (LA CAJA GIGANTE DE FOTOS)
    ========================================= */
-footer {
-    background-color: #3b2a1a; /* Usamos el mismo café oscuro del encabezado */
-    color: #f4ecd8; /* Letras beige */
-    text-align: center; /* Centramos el texto para que se vea ordenado */
-    padding: 20px; /* Le damos espacio por dentro para que no se vea aplastado */
-    margin-top: 50px; /* Lo empujamos hacia abajo para que no se pegue con lo de arriba */
+.seccion-hero {
+    background-color: #3b2a1a; /* Mantengo el fondo café oscuro para hacer contraste con el beige de abajo */
+    min-height: 100vh; /* Me aseguro de que esta sección ocupe al menos toda mi pantalla */
+    padding-bottom: 60px;
 }
 
-/* =========================================
-   EL CONTENIDO PRINCIPAL (Banner)
-   ========================================= */
-
-/* le doy espacio y centro todo el texto del banner */
-.banner-principal {
-    text-align: center;
-    padding: 80px 20px; /* mucho espacio arriba y abajo para que respire */
+.texto-historia {
+    max-width: 800px;
+    padding: 0 20px;
 }
 
-/* hago el titulo mas grande y llamativo */
-.banner-principal h2 {
-    font-size: 36px;
-    margin-bottom: 10px;
-}
-
-/* le doy estilo de boton real al enlace */
-.boton-catalogo {
+/* Diseño de mi botón para invitar a ver el catálogo */
+.btn-historia {
     display: inline-block;
-    background-color: #4a3623; /* fondo cafe oscuro */
-    color: #f4ecd8; /* letras beige */
-    padding: 12px 25px; /* engordo el boton por dentro */
-    margin-top: 20px;
-    text-decoration: none; /* le quito la raya azul */
+    padding: 12px 30px;
+    background-color: transparent;
+    color: #f4ecd8;
+    border: 2px solid #f4ecd8;
+    border-radius: 5px;
+    text-decoration: none;
     font-weight: bold;
-    border-radius: 5px; /* le redondeo las esquinitas */
+    font-size: 18px;
     transition: 0.3s;
 }
 
-/* el efecto cuando paso el mouse sobre el boton */
-.boton-catalogo:hover {
-    background-color: #c49a45; /* fondo dorado elegante */
-    color: #4a3623; /* letras cafes */
+.btn-historia:hover {
+    background-color: #c49a45;
+    border-color: #c49a45;
+    color: #3b2a1a;
+}
+
+/* =========================================
+   CATÁLOGO DE SOMBREROS (USANDO CSS GRID)
+   ========================================= */
+.catalogo {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.grid-sombreros {
+    display: grid;
+    /* Uso Grid y minmax para que mis tarjetas se adapten a celulares automáticamente sin usar media queries */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px; 
+    margin-top: 40px;
+    max-width: 1100px; 
+    margin-left: auto;
+    margin-right: auto; /* Con esto centro mi cuadrícula en la pantalla */
+}
+
+.tarjeta {
+    background-color: #ffffff; 
+    border-radius: 10px; 
+    padding: 25px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Una sombra sutil para que mis tarjetas resalten del fondo beige */
+    text-align: center;
+}
+
+.tarjeta img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.precio {
+    font-size: 22px;
+    font-weight: bold;
+    color: #3b2a1a;
+}
+
+/* =========================================
+    BOTONES 3D PARA LOS SOMBREROS
+   ========================================= */
+.btn-3d {
+    /* Guardo mis colores en variables para usarlos en las caras del botón 3D */
+    --color1: #4a3623; 
+    --color2: #302316; 
+    
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    perspective: 1000px;
+    padding: 10px 20px;
+    background: linear-gradient(var(--color1), var(--color2));
+    border: none;
+    outline: none;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #f4ecd8; 
+    text-shadow: 0 5px 5px #000;
+    cursor: pointer;
+    transform: rotateX(70deg) rotateZ(30deg);
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    position: relative; 
+}
+
+/* Construyo la base de mi botón 3D */
+.btn-3d::before {
+    content: "";
+    width: 100%;
+    height: 15px;
+    background-color: var(--color2);
+    position: absolute;
+    bottom: -15px; 
+    right: 0;
+    transform: rotateX(90deg);
+    transform-origin: top;
+}
+
+/* Construyo el lateral de mi botón 3D */
+.btn-3d::after {
+    content: "";
+    width: 15px;
+    height: 100%;
+    background-color: var(--color1);
+    position: absolute;
+    top: 0;
+    right: -15px; 
+    transform: rotateY(-90deg);
+    transform-origin: left;
+}
+
+/* El efecto al pasar el mouse */
+.btn-3d:hover {
+    transform: rotateX(30deg) rotateZ(0);
+}
+
+/* =========================================
+   PIE DE PÁGINA
+   ========================================= */
+footer {
+    background-color: #3b2a1a; 
+    color: #f4ecd8; 
+    text-align: center; 
+    padding: 20px; 
+    margin-top: 50px; 
 }
